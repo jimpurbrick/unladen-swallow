@@ -1,0 +1,18 @@
+1) Install clang and llvm packages.
+
+ii  clang                                 1:3.0-6.2                               armhf        Low-Level Virtual Machine (LLVM), C language family frontend
+ii  libclang-common-dev                   1:3.0-6.2                               armhf        clang library - Common development package
+ii  libsclang1                            1:3.4.5-1wheezy1                        armhf        SuperCollider language interpreter library
+ii  libllvm3.0:armhf                      3.0-10                                  armhf        Low-Level Virtual Machine (LLVM), runtime library
+ii  llvm                                  1:3.0-14+nmu2                           armhf        Low-Level Virtual Machine (LLVM)
+ii  llvm-3.0                              3.0-10                                  armhf        Low-Level Virtual Machine (LLVM)
+ii  llvm-3.0-dev                          3.0-10                                  armhf        Low-Level Virtual Machine (LLVM), libraries and headers
+ii  llvm-3.0-runtime                      3.0-10                                  armhf        Low-Level Virtual Machine (LLVM), bytecode interpreter
+ii  llvm-dev                              1:3.0-14+nmu2                           armhf        Low-Level Virtual Machine (LLVM), libraries and headers
+ii  llvm-runtime                          1:3.0-14+nmu2                           armhf        Low-Level Virtual Machine (LLVM), bytecode interpreter
+
+2) Link ARM includes
+
+`ln -s /usr/include/arm-linux-gnueabihf/foo /usr/include/foo` for gnu bits asm sys.
+
+3) Replace X86 references with ARM in Makefile after running configure.
