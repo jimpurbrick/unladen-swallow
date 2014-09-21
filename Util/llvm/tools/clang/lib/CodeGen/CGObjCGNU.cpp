@@ -1493,7 +1493,7 @@ llvm::Function *CGObjCGNU::ModuleInitFunction() {
     Elements.push_back(llvm::ConstantInt::get(LongTy, RuntimeVersion));
   }
   // sizeof(ModuleTy)
-  llvm::TargetData td = llvm::TargetData::TargetData(&TheModule);
+  llvm::TargetData td = llvm::TargetData(&TheModule);
   Elements.push_back(llvm::ConstantInt::get(LongTy,
                      td.getTypeSizeInBits(ModuleTy)/8));
   //FIXME: Should be the path to the file where this module was declared
@@ -1644,7 +1644,7 @@ void CGObjCGNU::EmitTryOrSynchronizedStmt(CodeGen::CodeGenFunction &CGF,
   CGF.EmitBlock(TryHandler);
 
   // Get the correct versions of the exception handling intrinsics
-  llvm::TargetData td = llvm::TargetData::TargetData(&TheModule);
+  llvm::TargetData td = llvm::TargetData(&TheModule);
   llvm::Value *llvm_eh_exception =
     CGF.CGM.getIntrinsic(llvm::Intrinsic::eh_exception);
   llvm::Value *llvm_eh_selector =

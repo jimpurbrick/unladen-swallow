@@ -23,6 +23,7 @@
 #include <utility>
 #include <cassert>
 #include <cstring>
+#include <cstddef>
 
 namespace llvm {
 
